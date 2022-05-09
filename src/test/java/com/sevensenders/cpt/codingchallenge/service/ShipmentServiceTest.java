@@ -3,6 +3,7 @@ package com.sevensenders.cpt.codingchallenge.service;
 import com.sevensenders.cpt.codingchallenge.model.Shipment;
 import com.sevensenders.cpt.codingchallenge.model.ShipmentStatus;
 import com.sevensenders.cpt.codingchallenge.repository.ShipmentRepository;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -45,5 +46,17 @@ public class ShipmentServiceTest {
 
         // assert status not changed
         assertThat(shipment.getShipmentStatus()).isEqualTo(ShipmentStatus.IN_TRANSIT);
+    }
+
+    @Test
+    @Disabled
+    public void shouldChangeStatusToDelivered() {
+        Shipment shipment = new Shipment();
+        shipment.setShipmentId(3);
+        shipment.setShipmentStatus(ShipmentStatus.IN_TRANSIT);
+
+        shipmentService.changeShipmentStatus(3, ShipmentStatus.DELIVERED);
+
+        assertThat(shipment.getShipmentStatus()).isEqualTo(ShipmentStatus.DELIVERED);
     }
 }
