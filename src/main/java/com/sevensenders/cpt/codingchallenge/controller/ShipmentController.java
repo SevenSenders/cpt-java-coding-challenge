@@ -19,7 +19,7 @@ public class ShipmentController {
     }
 
     @GetMapping("/shipments")
-    public List<Shipment> getAllShipments() {
-        return shipmentService.fetchShipments();
+    public List<Shipment> findAllShipments() {
+        return shipmentService.findAllShipments();
     }
 }

@@ -19,8 +19,8 @@ public class OrderController {
     }
 
     @GetMapping("/orders")
-    public List<Order> fetchOrders() {
-        return orderService.fetchOrders();
+    public List<Order> findAllOrders() {
+        return orderService.findAllOrders();
     }
 
 }
