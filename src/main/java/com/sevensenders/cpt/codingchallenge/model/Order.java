@@ -3,11 +3,10 @@ package com.sevensenders.cpt.codingchallenge.model;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import javax.persistence.Entity;
 import java.io.Serializable;
 import java.time.Instant;
 
@@ -18,6 +17,10 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer orderId;
+
+    private String shopOrderId;
+
+    private String shopOrderUrl;
 
     private Instant createdAt;
 
