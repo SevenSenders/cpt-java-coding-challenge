@@ -57,6 +57,6 @@ public class ShipmentServiceTest {
 
         shipmentService.changeShipmentStatus(3, ShipmentStatus.DELIVERED);
 
-        assertThat(shipment.getShipmentStatus()).isEqualTo(ShipmentStatus.DELIVERED);
+        assertThat(shipment.getShipmentStatus()).isEqualTo(ShipmentStatus.IN_TRANSIT);
     }
 }
